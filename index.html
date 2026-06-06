@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر YOVO - تسوق أون لاين</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #ff5252;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 3rem 0 2rem;
+            color: #333;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            background-color: white;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .feature-item p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🛍️ YOVO</div>
+            <nav>
+                <ul>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#about">حول المتجر</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>مرحباً بك في متجر YOVO</h1>
+        <p>اكتشف أفضل المنتجات بأسعار منافسة وجودة عالية</p>
+        <a href="#products" class="btn">تسوق الآن</a>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Products Section -->
+        <section id="products">
+            <h2 class="section-title">منتجاتنا المميزة</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-image">👔</div>
+                    <div class="product-info">
+                        <div class="product-name">ملابس عصرية</div>
+                        <div class="product-description">أفضل تشكيلة من الملابس العصرية والفاخرة</div>
+                        <div class="product-rating">★★★★★ (245)</div>
+                        <div class="product-price">150 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👟</div>
+                    <div class="product-info">
+                        <div class="product-name">أحذية رياضية</div>
+                        <div class="product-description">أحذية مريحة وعالية الجودة للرياضة</div>
+                        <div class="product-rating">★★★★☆ (189)</div>
+                        <div class="product-price">200 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <div class="product-info">
+                        <div class="product-name">ساعات فاخرة</div>
+                        <div class="product-description">ساعات يد تقليدية وذكية</div>
+                        <div class="product-rating">★★★★★ (312)</div>
+                        <div class="product-price">350 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👜</div>
+                    <div class="product-info">
+                        <div class="product-name">حقائب جلدية</div>
+                        <div class="product-description">حقائب أنيقة مصنوعة من جلد طبيعي</div>
+                        <div class="product-rating">★★★★★ (278)</div>
+                        <div class="product-price">250 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">😎</div>
+                    <div class="product-info">
+                        <div class="product-name">نظارات شمسية</div>
+                        <div class="product-description">نظارات عصرية بتصاميم مختلفة</div>
+                        <div class="product-rating">★★★★☆ (156)</div>
+                        <div class="product-price">180 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💍</div>
+                    <div class="product-info">
+                        <div class="product-name">إكسسوارات</div>
+                        <div class="product-description">تشكيلة متنوعة من الإكسسوارات الفاخرة</div>
+                        <div class="product-rating">★★★★★ (234)</div>
+                        <div class="product-price">120 ر.س</div>
+                        <a href="#" class="btn">أضف إلى السلة</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2 class="section-title">مميزات متجرنا</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>توصيل سريع</h3>
+                    <p>توصيل مجاني لجميع الطلبات بدون حد أدنى</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💳</div>
+                    <h3>دفع آمن</h3>
+                    <p>طرق دفع آمنة وموثوقة</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">↩️</div>
+                    <h3>استرجاع سهل</h3>
+                    <p>استرجاع المنتجات خلال 30 يوم</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
+                    <h3>جودة عالية</h3>
+                    <p>جميع المنتجات معتمدة وأصلية 100%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="features">
+            <h2 class="section-title">حول متجر YOVO</h2>
+            <p style="text-align: center; line-height: 1.8; color: #666; font-size: 1.1rem;">
+                متجر YOVO هو منصة تسوق إلكترونية متخصصة في بيع أفضل المنتجات بأسعار منافسة. 
+                نحن نسعى لتقديم تجربة تسوق رائعة مع خدمة عملاء متميزة وضمان على جودة جميع منتجاتنا.
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 متجر YOVO. جميع الحقوق محفوظة.</p>
+        <p>البريد الإلكتروني: info@yovo.com | الهاتف: +966-1-1234567</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">WhatsApp</a>
+        </div>
+    </footer>
+</body>
+</html>
