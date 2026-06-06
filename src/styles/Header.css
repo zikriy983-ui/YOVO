@@ -1,0 +1,6 @@
+.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: bold; text-decoration: none; color: white; }
+.nav { display: flex; gap: 2rem; }
+.nav a { color: white; text-decoration: none; }
+.header-actions { display: flex; gap: 1rem; }

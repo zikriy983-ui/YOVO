@@ -1,0 +1,6 @@
+.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6rem 0; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+.btn { padding: 0.75rem 1.5rem; border-radius: 5px; text-decoration: none; }
+.btn-primary { background: #667eea; color: white; }
+.btn-large { padding: 1rem 2rem; font-size: 1.1rem; }

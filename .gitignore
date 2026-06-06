@@ -1,4 +1,9 @@
-.project
-.settings
-salesforce.schema
-Referenced Packages
+node_modules/
+.env
+.env.local
+dist/
+build/
+*.log
+.DS_Store
+uploads/
+public/uploads/
